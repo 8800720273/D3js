@@ -1,0 +1,45 @@
+<!Doctype html>
+<!--<html>
+    <head>
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+    <body>
+        
+        <p>This is First Paragraph</p>
+        <p>this is second Paragraph</p> 
+        <script>
+                d3.select("p").style("color","red");
+        </script>
+    </body>
+</html>-->
+<!doctype html>
+<!--<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p>First paragraph</p>
+    <script>
+        d3.select("p").html("<span>This was added in HTML</span>");
+    </script>
+</body>
+</html>-->
+
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        .error {
+            color: 'red'
+        }
+    </style>
+</head>
+<body>
+
+    <p>Error:</p>
+
+    <script>
+        d3.select("p").classed('error', true);
+    </script>
+</body>
+</html>
