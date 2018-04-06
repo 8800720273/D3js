@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <script>
+        var dataArray = [50, 70, 90];
+        var width = 1000;
+        var widthScale = d3.scaleLinear()
+                       .domain([0, 90])
+                       .range([0, width]);
+
+        var convas = d3.select("body")
+            .append("svg")
+            .attr("width", 1000)
+            .attr("height", 1000);
+        var rect = convas.selectAll("rect")
+            .data(dataArray)
+            .enter()
+            .append("rect")
+            .attr("width", function (d) { return widthScale; })
+            .attr("height", 50)
+
+        .attr("fill", "blue")
+        .attr("y", function (d, i) { return i * 80 });
+    </script>
+</body>
+</html>
