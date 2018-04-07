@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <script>
+        d3.json("mydata.json",function(data){
+             
+            var dataArray = [50, 70, 90];
+            var width = 50;
+            var widthScale = d3.scaleLinear()
+                           .domain(50,90)
+                           .range([0, width]);
+
+
+            var convas = d3.select("body")
+                .append("svg")
+                .attr("width", 1000)
+                .attr("height", 1000);
+            var group = convas.append("g")
+            var rect = convas.selectAll("rect")
+                .data(dataArray)
+                .enter()
+                .append("rect")
+                .attr("width", function (widthScale) { return widthScale * 10; })
+                .attr("height", 50)
+
+            .attr("fill", "blue")
+            .attr("y", function (d, i) { return i * 80 });
+            convas.selectAll("text")
+            .data(data)
+            .enter()
+            .append("text")
+            .attr("fill", "white")
+            .attr("y", function (d, i) { return i * 50 + 30; })
+            .text(function (d) { return d.name })
+            group.attr("transform","translate('fill':'red')")
+
+        })
+    </script>
+</body>
+</html>

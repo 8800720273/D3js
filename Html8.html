@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<script>
+    var canvas = d3.select("body").append("svg").attr("width", 1500).attr("height", 1500)
+    var circle = canvas.append("circle").attr("cx", 100).attr("cy", 150).attr("r", 20).attr("fill", "dodgerblue")
+    circle.transition().duration(3000).delay(2000).attr("cx", 300).attr("cy", 400)
+    .attr("cx", 300).attr("cy", 400).delay(9000).each("end", function () { d3.select(this).attr("fill", "seaGreen"); })
+
+</script>
+</body>
+</html>
